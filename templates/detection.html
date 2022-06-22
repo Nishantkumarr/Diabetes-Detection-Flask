@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <link type="text/css" rel="stylesheet" href="static/style.css"/> -->
+    <link  type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+</head>
+
+<style>
+    body{
+        background: #00c3ff;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+    }
+    .content{
+        width: 50vw;
+        font-size: 1.1rem;
+    }
+    .buttns{
+        display: flex;
+        flex-direction: row;
+        min-width: 20vw;
+        max-width: 25vw;
+        align-items: center;
+        justify-content: space-around;
+    }
+    input{
+        color: rgba(77, 77, 77, 0.664);
+        padding: 8px 8px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+    }
+
+    label{
+        font-size:1.2rem;
+        font-weight:700;
+    }
+</style>
+
+<body>
+    <div class="content">
+
+        <form action={{ url_for('detection_function')}} method="post" >
+            
+            <p style="font-size:2rem;font-weight: 500; padding-top: 2rem;"> Diabetes Detection</p>
+
+            <div class="d_form_set">
+                <div class="form-group">
+                    <label for="pregnancies">No of Pregnancies </label><br>
+                    <input type="text" id="lname" name="pregnancies" value="" pattern="^-?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)$">
+                </div>
+
+                <div class="form-group">
+                    <label for="glucose">Glucose Levels</label><br>
+                    <input type="text" id="lname" name="glucose" value="" pattern="^-?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)$">
+                </div>
+
+                <div class="form-group">
+                    <label for="bp">Blood Pressure</label><br>
+                    <input type="text" id="lname" name="bp" value="" pattern="^-?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)$">
+                </div>
+
+                <div class="form-group">
+                    <label for="skinthickness">Skin Thickness</label><br>
+                    <input type="text" id="lname" name="skinthickness" value="" pattern="^-?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)$">
+       
+                </div>
+                <div class="form-group">
+                    <label for="bmi">BMI</label><br>
+                    <input type="text" id="lname" name="bmi" value="" pattern="^-?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)$">
+       
+                </div>
+    
+                <div class="form-group">
+                    <label for="insulin">Insulin Levels</label><br>
+                    <input type="text" id="lname" name="insulin" value="" pattern="^-?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)$">
+       
+                </div>
+                <div class="form-group">
+                    <label for="dpfunc">Diabetes Pedigree Function</label><br>
+                    <input type="text" id="lname" name="dpfunc" value="" pattern="^-?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)$">
+       
+                </div>
+                <div class="form-group">
+                    <label for="age">Age </label><br>
+                    <input type="text" id="lname" name="age" value="" pattern="^-?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)$">
+       
+                </div>          
+            </div>
+            <div class="buttns">
+                <input type="submit" id="submit">
+                <a id="submit" href={{url_for("hello_world")}}>Go Back</a>
+ 
+            </div>
+ 
+        </form>
+    </div>
+</body>
+
+
+</html>
